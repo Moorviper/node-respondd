@@ -6,11 +6,30 @@ A respondd server written in node.js.
 
 ### Installation
 
-1. Copy the contents of this git repository to `/opt/node-respondd`
+#### Install depencies
+This tool need ethtool
+
+    sudo apt-get install ethtool 
+
+#### Install
+
+1. Clone the Repo
+
+    git clone https://github.com/hopglass/node-respondd.git /opt/node-respondd
+    
 2. On `systemd` based systems, copy `node-respondd.service` to `/etc/systemd/system/respondd.service`
-   and run `systemctl enable node-respondd`.
-   On systems without `systemd`, check how to install services.
-3. Configure sudo.
+
+   cd /opt/node-respondd
+   cp node-respondd.service /etc/systemd/system/respondd.service
+   
+3. enable the service
+
+    systemctl enable node-respondd
+    
+
+On systems without `systemd`, check how to install services.
+
+4. Configure sudo.
 
 ### sudo configuration
 
